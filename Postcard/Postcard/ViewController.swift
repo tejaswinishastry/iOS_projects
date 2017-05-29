@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
     
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sendMailButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,6 +28,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendMailButtonPressed(_ sender: UIButton) {
+        nameLabel.isHidden = false
+        nameLabel.text = enterNameTextField.text
+        nameLabel.textColor = UIColor.red
+        enterNameTextField.text = ""
         messageLabel.isHidden = false
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.red
